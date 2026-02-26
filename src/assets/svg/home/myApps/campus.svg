@@ -1,0 +1,11 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="47.8537" height="47.8537" rx="21.7517" fill="white"/>
+<path d="M13.3611 10.0451L19.1553 20.5702C19.94 21.9955 19.426 23.7967 18.0074 24.5933L7.59972 30.4378" stroke="#E74235" stroke-width="1.85002" stroke-linecap="round"/>
+<ellipse cx="3.34853" cy="3.36612" rx="3.34853" ry="3.36612" transform="matrix(0.871927 -0.489635 0.482266 0.876025 7.09375 18.7109)" fill="#E74235"/>
+<path d="M34.4944 37.6326L28.7001 27.1076C27.9155 25.6823 28.4294 23.881 29.8481 23.0844L40.2557 17.2399" stroke="#FFBA00" stroke-width="1.85002" stroke-linecap="round"/>
+<ellipse cx="3.34853" cy="3.36612" rx="3.34853" ry="3.36612" transform="matrix(-0.871927 0.489635 0.482266 0.876025 37.5566 23.9023)" fill="#FFBA00"/>
+<path d="M17.5764 7.6756L23.3706 18.2007C24.1553 19.626 25.9414 20.1356 27.36 19.3389L37.7677 13.4945" stroke="#4CAF50" stroke-width="1.85002" stroke-linecap="round"/>
+<ellipse cx="3.34853" cy="3.36612" rx="3.34853" ry="3.36612" transform="matrix(-0.871927 0.489635 0.482266 0.876025 28.1758 6.86914)" fill="#4CAF50"/>
+<path d="M29.9549 40.1818L24.1606 29.6568C23.376 28.2315 21.5899 27.7218 20.1712 28.5185L9.76356 34.363" stroke="#2683FB" stroke-width="1.85002" stroke-linecap="round"/>
+<ellipse cx="3.34853" cy="3.36612" rx="3.34853" ry="3.36612" transform="matrix(0.871927 -0.489635 0.482266 0.876025 16.4688 35.7441)" fill="#2683FB"/>
+</svg>

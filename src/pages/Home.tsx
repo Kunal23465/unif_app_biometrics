@@ -1,10 +1,9 @@
-import ProfileCard from "../components/ProfileCard";
 import AppCard from "../components/AppCard";
-import AttendanceCard from "../components/AttendanceCard";
-import apps from "../assets/svg/home/apps.svg";
-import touchId from "../assets/svg/attendance/touch_1.svg";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Header from "../components/Header";
+import DateStatusCard from "../components/DateStatusCard";
+import PunchCard from "../components/PunchCard";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -21,19 +20,26 @@ const Home: React.FC = () => {
     setChecking(true);
 
     try {
-      const res =
-        await window.flutter_inappwebview.callHandler("markAttendance");
+      const res = await window.flutter_inappwebview.callHandler(
+        "markAttendance",
+        {
+          requireBiometric: false,
+        },
+      );
 
-      if (!res.success) {
+      if (!res?.success) {
         alert(res.message || "Attendance failed");
         return;
       }
 
-      console.log("Time:", res.timestamp);
-      console.log("Lat:", res.latitude);
-      console.log("Lng:", res.longitude);
-
-      navigate("/attendance");
+      // Pass location + timestamp to Attendance page
+      navigate("/attendance", {
+        state: {
+          latitude: res.latitude,
+          longitude: res.longitude,
+          timestamp: res.timestamp,
+        },
+      });
     } catch (error) {
       console.error("Attendance error:", error);
       alert("Something went wrong");
@@ -43,23 +49,13 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white p-6 mt-10">
-      <div className="max-w-md mx-auto">
-        <ProfileCard />
+    <div className="min-h-screen bg-gray-50">
+      <Header />
 
-        <h3 className="mt-8 mb-4 text-lg font-semibold flex items-center gap-2">
-          <img src={apps} alt="apps" className="w-5 h-5" />
-          <span>My Apps</span>
-        </h3>
-
+      <div className="px-4 -mt-12 space-y-4 pb-6">
+        <DateStatusCard />
+        <PunchCard onPunch={handleAttendanceClick} />
         <AppCard />
-
-        <h3 className="mt-8 mb-4 text-lg font-semibold flex items-center gap-2">
-          <img src={touchId} alt="attendance" className="w-5 h-5" />
-          <span>Attendance</span>
-        </h3>
-
-        <AttendanceCard onClick={handleAttendanceClick} />
       </div>
     </div>
   );
