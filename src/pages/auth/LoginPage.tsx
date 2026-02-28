@@ -4,14 +4,12 @@ import { AxiosError } from "axios";
 import Logo from "../../assets/svg/login/Logo.svg";
 import { loginService } from "../../services/modules/auth/login.service";
 import CustomInput from "../../utils/CustomInput";
-import { sendOtpService } from "../../services/modules/auth/otp.service";
 
 const LoginPage: React.FC = () => {
   const navigate = useNavigate();
 
   const [emplId, setEmplId] = useState("");
   const [password, setPassword] = useState("");
-  const [remember, setRemember] = useState(true);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -116,7 +114,7 @@ const LoginPage: React.FC = () => {
         />
 
         {/* ERROR MESSAGE */}
-        {/* {errorMsg && <p className="text-red-500 text-sm mb-3 font-medium">{errorMsg}</p>} */}
+        {errorMsg && <p className="text-red-500 text-sm mb-3 font-medium">{errorMsg}</p>}
 
         {/* REMEMBER & FORGOT */}
         <div className="flex items-center justify-between mb-6">
