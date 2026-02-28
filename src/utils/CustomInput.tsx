@@ -40,7 +40,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const val = e.target.value;
     onChange(val);
-    if (!touched) setTouched(true); // mark touched
+    if (!touched) setTouched(true); // mark  touched
     const msg = runValidators(val);
     setError(msg);
   };
